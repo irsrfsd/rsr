@@ -10,9 +10,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 10vh 0px;
+    
     gap:10vh;
-    background: repeating-linear-gradient(rgba(200,120,50,0.5),rgba(20,120,220,0.5),rgb(250,120,120,0.5) 20%);
+    background: repeating-linear-gradient(rgba(200,120,50,0.5),rgba(20,120,220,0.5),rgb(250,120,120,0.5) 100vh);
 }
 .card{
     width: 80%;
@@ -25,6 +25,7 @@
     align-items: center;
     font-size: 20px;
     position:relative;
+   
 }
 button{
     width: 100%;
@@ -48,34 +49,54 @@ h1{
 </head>
 <body>
     <div class="con">
+         <div class="card">
+            <img src="g.png" class="side"/>
+            <h1>0</h1>
+            <button onclick="inc0()"></button>
+        </div>
         <div class="card">
-            <img src="http://pluspng.com/img-png/png-lord-ganesh-lord-ganesh-png-1220.png" class="side"/>
+            <img src="s.jpeg" class="side"/>
             <h1>0</h1>
             <button onclick="inc1()"></button>
         </div>
 
         <div class="card">
+             <img src="b.jpeg" class="side"/>
             <h1>0</h1>
             <button onclick="inc2()"></button>
         </div>
 
         <div class="card">
+             <img src="ha.jpeg" class="side"/>
             <h1>0</h1>
             <button onclick="inc3()"></button>
         </div>
 
         <div class="card">
+             <img src="km.jpg" class="side"/>
             <h1>0</h1>
             <button onclick="inc4()"></button>
         </div>
 
         <div class="card">
+             <img src="sr.jpg" class="side"/>
             <h1>0</h1>
             <button onclick="inc5()"></button>
+        </div>
+          <div class="card">
+             <img src="bh.jpeg" class="side"/>
+            <h1>0</h1>
+            <button onclick="inc6()"></button>
         </div>
 
     </div>
     <script>
+        let c0=localStorage.getItem("c0")
+        if(c0==undefined)
+    {
+        c0=0
+    }
+
         let c1=localStorage.getItem("c1")
         if(c1==undefined)
     {
@@ -106,15 +127,29 @@ h1{
     {
         c5=0
     }
+
+        let c6=localStorage.getItem("c6")
+        if(c6==undefined)
+    {
+        c6=0
+    }
         let r=document.getElementsByTagName("h1")
-        r[0].innerHTML="C1 : "+c1
-        r[1].innerHTML="C2 : "+c2
-        r[2].innerHTML="C3 : "+c3
-        r[3].innerHTML="C4 : "+c4
-        r[4].innerHTML="C5 : "+c5
+        r[0].innerHTML="C1 : "+c0
+        r[1].innerHTML="C2 : "+c1
+        r[2].innerHTML="C3 : "+c2
+        r[3].innerHTML="C4 : "+c3
+        r[4].innerHTML="C5 : "+c4
+         r[5].innerHTML="C6 : "+c5
+          r[6].innerHTML="C7 : "+c6
+          let inc0=()=>{
+            c0++
+            r[0].innerHTML="C1 : "+c0
+            localStorage.setItem("c0",c0)
+
+        }
         let inc1=()=>{
             c1++
-            r[0].innerHTML="C1 : "+c1
+            r[1].innerHTML="C2 : "+c1
             localStorage.setItem("c1",c1)
 
         }
@@ -122,7 +157,7 @@ h1{
 
         let inc2=()=>{
             c2++
-            r[1].innerHTML="C2 : "+c2
+            r[2].innerHTML="C3 : "+c2
             localStorage.setItem("c2",c2)
 
         }
@@ -130,21 +165,28 @@ h1{
 
         let inc3=()=>{
             c3++
-            r[2].innerHTML="C3 : "+c3
+            r[3].innerHTML="C4 : "+c3
             localStorage.setItem("c3",c3)
 
         }
 
         let inc4=()=>{
             c4++
-            r[3].innerHTML="C4 : "+c4
+            r[4].innerHTML="C5 : "+c4
             localStorage.setItem("c4",c4)
 
         }
         let inc5=()=>{
             c5++
-            r[4].innerHTML="C5 : "+c5
+            r[5].innerHTML="C6 : "+c5
             localStorage.setItem("c5",c5)
+
+        }
+
+             let inc6=()=>{
+            c6++
+            r[6].innerHTML="C7 : "+c6
+            localStorage.setItem("c6",c6)
 
         }
     </script>
